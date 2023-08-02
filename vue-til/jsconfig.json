@@ -2,18 +2,25 @@
   "compilerOptions": {
     "target": "es5",
     "module": "esnext",
-    "baseUrl": "./",
+    // 현재 프로젝트가 기준
+    "baseUrl": ".",
     "moduleResolution": "node",
     "paths": {
+      "~/*": [
+        "./*"
+      ],
+      // src 폴더 밑에 있는 폴더(파일)에 바로 접근 가능
       "@/*": [
-        "src/*"
-      ]
+        "./src/*"
+      ],
     },
     "lib": [
       "esnext",
       "dom",
       "dom.iterable",
       "scripthost"
-    ]
+    ],
   }
+  // vscode를 쉽게 활용하기 위한 파일 
+
 }

@@ -1,26 +1,27 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
+    <span>hello</span>
+    <AppHeader />
   </div>
 </template>
 
 <script>
+import AppHeader from '@/components/common/AppHeader.vue';
 export default {
   name: 'App',
-
-  created() {
-    // var a = 10;
-    console.log('10');
+  components: {
+    AppHeader,
   },
 };
 </script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+* {
+  margin: 0;
+  padding: 0;
+  color: #000;
+  font-size: 16px;
+  list-style: none;
+  text-decoration: none;
 }
 </style>
