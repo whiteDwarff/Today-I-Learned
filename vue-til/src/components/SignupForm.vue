@@ -2,7 +2,7 @@
   <!-- .prevent : submit event 발생 시 화면의 새로고침을 제어 -->
   <form @submit.prevent="submitForm">
     <div class="border-box">
-      <label for="username">ID</label>
+      <label for="username">EMAIL</label>
       <!-- v-model : 사용자의 입력값이 data에 저장 -->
       <input v-model="username" id="username" type="email" />
     </div>
@@ -14,13 +14,21 @@
       <label for="nickname">NICKNAME</label>
       <input v-model="nickname" id="nickname" type="text" />
     </div>
-    <button type="submit" class="submit-button">SUBMIT</button>
+    <button
+      :disabled="!isUserNameValid || !password || !nickname"
+      type="submit"
+      class="submit-button"
+    >
+      SUBMIT
+    </button>
     <p class="align-center">{{ logMessage }}</p>
   </form>
 </template>
 
 <script>
 import { registerUser } from '@/api/index';
+import { validateEmail } from '@/utils/validation';
+
 export default {
   // vda -> tap : data()구문 자동완성
   data() {
@@ -32,12 +40,16 @@ export default {
       logMessage: '',
     };
   },
+  computed: {
+    // username이 입력될때마다 실행, 실시간으로 사용자의 입력을 검사
+    isUserNameValid() {
+      return validateEmail(this.username);
+    },
+  },
   methods: {
     // form의 submit event
     async submitForm() {
-      if (this.username == '' || this.password == '' || this.nickname == '') {
-        alert('빈칸을 모두 입력해주세요');
-      } else {
+      try {
         let userData = {
           username: this.username,
           password: this.password,
@@ -50,6 +62,8 @@ export default {
         const { data } = await registerUser(userData);
         this.logMessage = `${data.nickname}님 환영합니다.`;
         this.initForm();
+      } catch (error) {
+        if (error.response.data.driver) alert('등록된 정보가 있습니다.');
       }
     },
     initForm() {

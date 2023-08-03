@@ -38,6 +38,7 @@ input {
   outline: none;
   width: 80%;
   font-size: 12px;
+  box-sizing: border-box;
 }
 .form-wrap {
   width: 40%;
@@ -53,11 +54,12 @@ input {
 .submit-button {
   display: block;
   padding: 10px;
-  margin: 25px 0 0 auto;
+  margin: 30px 0 0 auto;
   border-radius: 10px;
   border: none;
   font-size: 12px;
-  background: greenyellow;
+  font-weight: bold;
+  background: #f00;
   color: #fff;
   cursor: pointer;
 }
