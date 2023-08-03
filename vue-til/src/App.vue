@@ -1,14 +1,15 @@
 <template>
-  <div id="app">
-    <span>hello</span>
+  <div>
     <AppHeader />
+    <!-- router view가 보여지는 영역 -->
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import AppHeader from '@/components/common/AppHeader.vue';
+// vim -> tab -> import 구문 자동완성
+import AppHeader from './components/common/AppHeader.vue';
 export default {
-  name: 'App',
   components: {
     AppHeader,
   },
@@ -19,9 +20,45 @@ export default {
 * {
   margin: 0;
   padding: 0;
-  color: #000;
+  color: black;
+  text-decoration: none;
   font-size: 16px;
   list-style: none;
-  text-decoration: none;
+}
+form {
+  font-weight: 200;
+}
+form label {
+  display: inline-block;
+  width: 20%;
+  font-size: 12px;
+}
+input {
+  border: none;
+  outline: none;
+  width: 80%;
+  font-size: 12px;
+}
+.form-wrap {
+  width: 40%;
+  margin: 0 auto;
+}
+.form-title {
+  margin-bottom: 30px;
+}
+.border-box {
+  padding: 10px 20px;
+  border-bottom: 1px solid #000;
+}
+.submit-button {
+  display: block;
+  padding: 10px;
+  margin: 25px 0 0 auto;
+  border-radius: 10px;
+  border: none;
+  font-size: 12px;
+  background: greenyellow;
+  color: #fff;
+  cursor: pointer;
 }
 </style>

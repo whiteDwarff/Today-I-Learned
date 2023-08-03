@@ -1,5 +1,8 @@
 {
   "devDependencies": {
     "bcrypt": "^5.1.0"
+  },
+  "dependencies": {
+    "vue-router": "^3.5.3"
   }
 }
