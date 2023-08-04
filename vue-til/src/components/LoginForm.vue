@@ -45,10 +45,14 @@ export default {
           username: this.username,
           password: this.password,
         };
-        await loginUser(userData);
+        let { data } = await loginUser(userData);
         alert('로그인이 성공되었습니다.');
-        this.usernameState = false;
-        this.passwordState = false;
+        // store의 mutataions에 접근
+        // setUserName : method, this.data.username: parameter
+        console.log(data);
+        this.$store.commit('setUserName', data.user.nickname);
+        // router-link to =""와 동일함, main 페이지로 이동 ***
+        this.$router.push('/main');
       } catch (error) {
         // 에러 처리
         if (error.response.data == 'Authentication failed. Wrong password.') {

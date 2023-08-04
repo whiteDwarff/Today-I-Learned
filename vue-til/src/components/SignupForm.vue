@@ -21,7 +21,6 @@
     >
       SUBMIT
     </button>
-    <p class="align-center">{{ logMessage }}</p>
   </form>
 </template>
 
@@ -36,8 +35,6 @@ export default {
       username: '',
       password: '',
       nickname: '',
-      // log
-      logMessage: '',
     };
   },
   computed: {
@@ -59,11 +56,13 @@ export default {
         // await registerUser(userData);의 data의 속성을 data에 바로 할당
         // 배열에서 원하는 값을 추출하여 변수에 할당하는 기능
         // 변수의 이름이 객체의 속성과 일치하기 때문
-        const { data } = await registerUser(userData);
-        this.logMessage = `${data.nickname}님 환영합니다.`;
-        this.initForm();
+        await registerUser(userData);
+        alert('회원가입이 완료되었습니다. 로그인 후 이용해주세요.');
+        this.$router.push('/login');
       } catch (error) {
-        if (error.response.data.driver) alert('등록된 정보가 있습니다.');
+        if (error.response.data.driver) alert('가입된 정보가 존재합니다.');
+      } finally {
+        this.initForm();
       }
     },
     initForm() {
