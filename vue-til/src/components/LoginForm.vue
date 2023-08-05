@@ -14,7 +14,7 @@
       type="submit"
       class="submit-button"
     >
-      SUBMIT
+      LOGIN
     </button>
   </form>
 </template>

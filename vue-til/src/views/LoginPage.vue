@@ -1,6 +1,5 @@
 <template>
   <div class="form-wrap">
-    <h3 class="form-title">LOGIN</h3>
     <LoginForm />
   </div>
 </template>

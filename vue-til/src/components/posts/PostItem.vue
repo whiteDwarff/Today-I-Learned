@@ -2,10 +2,10 @@
   <li class="post-items">
     <div class="post-wrap">
       <div class="post-flex-box">
-        <h6 class="post-title">❗️ {{ postItem.title }}</h6>
+        <h6 class="post-title">🔗 {{ postItem.title }}</h6>
         <small class="post-time">{{ postItem.createdAt }}</small>
       </div>
-      <p class="post-content">🔗 {{ postItem.contents }}</p>
+      <p class="post-content">{{ postItem.contents }}</p>
     </div>
   </li>
 </template>
@@ -26,7 +26,6 @@ export default {
   padding: 10px 0;
   display: inline-block;
   width: 45%;
-  font-size: 0;
 }
 .post-items:nth-child(2n) {
   margin-left: 10%;

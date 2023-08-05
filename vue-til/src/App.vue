@@ -30,7 +30,8 @@ export default {
 form label {
   display: inline-block;
   width: 20%;
-  font-size: 12px;
+  font-size: 10px;
+  font-weight: 300;
 }
 input {
   border: none;
@@ -40,26 +41,30 @@ input {
   box-sizing: border-box;
 }
 .form-wrap {
-  width: 40%;
-  margin: 0 auto;
-}
-.form-title {
-  margin-bottom: 30px;
+  width: 35%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .border-box {
   padding: 10px 20px;
   border-bottom: 1px solid #000;
 }
 .submit-button {
+  width: 100%;
   display: block;
   padding: 10px;
-  margin: 30px 0 0 auto;
+  margin: 50px 0 0 auto;
   border-radius: 10px;
   border: none;
   font-size: 12px;
   font-weight: bold;
-  background: #f00;
+  background: #000;
   color: #fff;
   cursor: pointer;
+}
+.bold {
+  font-weight: bold;
 }
 </style>

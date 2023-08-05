@@ -19,7 +19,7 @@
       type="submit"
       class="submit-button"
     >
-      SUBMIT
+      CREATE ACCOUNT
     </button>
   </form>
 </template>

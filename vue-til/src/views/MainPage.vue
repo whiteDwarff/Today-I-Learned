@@ -8,6 +8,10 @@
         :postItem="postItem"
       />
     </ul>
+    <router-link to="/add" class="create-button">
+      <i class="fa-solid fa-pen" />
+    </router-link>
+    <router-link to=""></router-link>
   </div>
 </template>
 
@@ -46,5 +50,17 @@ export default {
 .post {
   width: 80%;
   margin: 0 auto;
+}
+.create-button {
+  position: absolute;
+  bottom: 10%;
+  right: 10%;
+  padding: 1%;
+  background-color: #fe9616;
+  border-radius: 50%;
+}
+.fa-solid {
+  font-size: 20px;
+  color: #fff;
 }
 </style>
