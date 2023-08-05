@@ -23,10 +23,9 @@ export default {
   color: black;
   text-decoration: none;
   font-size: 16px;
+  font-weight: normal;
   list-style: none;
-}
-form {
-  font-weight: 200;
+  font-family: 'Spoqa Han Sans Neo', 'sans-serif';
 }
 form label {
   display: inline-block;

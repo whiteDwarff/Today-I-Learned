@@ -20,8 +20,8 @@
 </template>
 
 <script>
-import { loginUser } from '@/api/index';
 import { validateEmail } from '@/utils/validation';
+
 export default {
   data() {
     return {
@@ -45,12 +45,7 @@ export default {
           username: this.username,
           password: this.password,
         };
-        let { data } = await loginUser(userData);
-        alert('로그인이 성공되었습니다.');
-        // store의 mutataions에 접근
-        // setUserName : method, this.data.username: parameter
-        console.log(data);
-        this.$store.commit('setUserName', data.user.nickname);
+        await this.$store.dispatch('LOGIN', userData);
         // router-link to =""와 동일함, main 페이지로 이동 ***
         this.$router.push('/main');
       } catch (error) {
