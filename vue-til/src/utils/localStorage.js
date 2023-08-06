@@ -1,10 +1,10 @@
-function saveUserName(nickname) {
+function saveUserToStorage(nickname) {
   localStorage.setItem('til_user', nickname);
 }
-function getUserName() {
+function getUserFromStorage() {
   return localStorage.getItem('til_user');
 }
-function logoutUser() {
+function deleteStorage() {
   localStorage.removeItem('til_user');
 }
-export { saveUserName, getUserName, logoutUser };
+export { saveUserToStorage, getUserFromStorage, deleteStorage };

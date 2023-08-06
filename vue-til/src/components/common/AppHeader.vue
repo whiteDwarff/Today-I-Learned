@@ -3,7 +3,9 @@
     <div class="flex-box">
       <div>
         <h1>
-          <router-link to="/" class="bold">📝 Today I Learned</router-link>
+          <router-link :to="logoLink" class="bold"
+            >📝 Today I Learned</router-link
+          >
         </h1>
         <small v-if="isUserLogin" class="small">
           by {{ $store.state.nickname }}
@@ -27,7 +29,8 @@
 </template>
 <script>
 import { deleteCookie } from '@/utils/cookies';
-import { logoutUser } from '@/utils/localStorage';
+import { deleteStorage } from '@/utils/localStorage';
+
 export default {
   computed: {
     isUserLogin() {
@@ -35,16 +38,21 @@ export default {
       // stroe는 component에서 바로 접근하는 방법은 좋지 않음.
       return this.$store.getters.isLogin;
     },
+    logoLink() {
+      // vuex의 state의 nickname 값에 따라 path 변경
+      return this.$store.getters.isLogin ? '/main' : '/login';
+    },
   },
   methods: {
     logoutUser() {
-      if (confirm('Would you like to logout')) {
+      if (confirm('Would you like to log out?')) {
         this.$store.commit('clearUserName');
+        this.$store.commit('clearToken');
         // this.$router.push('/');
         if (this.$route.path !== '/login') this.$router.push('/login');
         deleteCookie('til_user');
         deleteCookie('til_auth');
-        logoutUser();
+        deleteStorage();
       }
     },
   },

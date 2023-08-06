@@ -5,13 +5,13 @@ import {
   saveAuthToCookie,
   saveUserToCookie,
 } from '@/utils/cookies';
-import { saveUserName, getUserName } from '@/utils/localStorage';
+import { saveUserToStorage, getUserFromStorage } from '@/utils/localStorage';
 import { loginUser } from '@/api/auth';
 Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    nickname: getUserName() || '',
+    nickname: getUserFromStorage() || '',
     token: getAuthFromCookie() || '',
   },
   // getters : state의 값이 변경되었을 경우 특정 상태를 개선
@@ -31,6 +31,9 @@ export default new Vuex.Store({
     clearUserName(state) {
       state.nickname = '';
     },
+    clearToken(state) {
+      state.token = '';
+    },
     setToken(state, token) {
       state.token = token;
     },
@@ -44,10 +47,9 @@ export default new Vuex.Store({
       commit('setUserName', data.user.nickname);
       commit('setToken', data.token);
       // brower cookie 저장소에 사용자의 정보 저장
-      console.log(data);
       saveAuthToCookie(data.token);
       saveUserToCookie(data.user.nickname);
-      saveUserName(data.user.nickname);
+      saveUserToStorage(data.user.nickname);
       return data;
     },
   },

@@ -57,10 +57,13 @@ export default {
         // 배열에서 원하는 값을 추출하여 변수에 할당하는 기능
         // 변수의 이름이 객체의 속성과 일치하기 때문
         await registerUser(userData);
-        alert('회원가입이 완료되었습니다. 로그인 후 이용해주세요.');
+        alert(
+          'Membership registration is complete. Please log in to use our services.',
+        );
         this.$router.push('/login');
       } catch (error) {
-        if (error.response.data.driver) alert('가입된 정보가 존재합니다.');
+        if (error.response.data.driver)
+          alert('Do you have existing information for this registration?');
       } finally {
         this.initForm();
       }
