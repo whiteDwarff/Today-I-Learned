@@ -6,16 +6,29 @@
         <small class="post-time">{{ postItem.createdAt }}</small>
       </div>
       <p class="post-content">{{ postItem.contents }}</p>
+      <div class="icon-box">
+        <i class="fa-solid fa-pen-to-square"></i>
+        <i @click="deleteItem" class="fa-solid fa-trash-can"></i>
+      </div>
     </div>
   </li>
 </template>
 
 <script>
+import { deletePost } from '@/api/posts';
 export default {
   props: {
     postItem: {
       type: Object,
       reqired: true,
+    },
+  },
+  methods: {
+    async deleteItem() {
+      if (confirm('You want to delete it?')) {
+        await deletePost(this.postItem._id);
+        this.$emit('refresh');
+      }
     },
   },
 };
@@ -31,8 +44,10 @@ export default {
   margin-left: 10%;
 }
 .post-wrap {
+  position: relative;
+  height: 141px;
   padding: 10px 30px;
-  box-shadow: 5px 4px 5px 3px rgba(72, 72, 72, 0.1);
+  box-shadow: 5px 4px 10px 3px rgba(72, 72, 72, 0.1);
 }
 .post-flex-box {
   display: flex;
@@ -47,5 +62,19 @@ export default {
 .post-content {
   font-size: 14px;
   font-weight: 200;
+}
+.icon-box {
+  position: absolute;
+  bottom: 5%;
+  right: 3%;
+}
+.fa-solid {
+  color: #ccc;
+  margin-left: 20px;
+  cursor: pointer;
+}
+.fa-solid:hover {
+  color: #fe9616;
+  transition: 0.4s ease-out;
 }
 </style>

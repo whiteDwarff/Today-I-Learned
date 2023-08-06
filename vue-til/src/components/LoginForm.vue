@@ -70,10 +70,3 @@ export default {
   },
 };
 </script>
-
-<style>
-.invalid-input {
-  transition: 0.4s ease-in;
-  border-bottom: 1px solid red;
-}
-</style>

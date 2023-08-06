@@ -6,6 +6,7 @@
         v-for="postItem in postItems"
         :key="postItem._id"
         :postItem="postItem"
+        @refresh="fetchData"
       />
     </ul>
     <router-link to="/add" class="create-button">
@@ -16,7 +17,7 @@
 </template>
 
 <script>
-import { fetchPosts } from '@/api/index';
+import { fetchPosts } from '@/api/posts';
 import PostItem from '@/components/posts/PostItem';
 import LoadingSpinner from '@/components/common/LoadingSpinner.vue';
 export default {

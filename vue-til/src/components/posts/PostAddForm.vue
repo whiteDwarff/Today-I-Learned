@@ -6,23 +6,36 @@
         <label for="title">TITLE</label>
         <input v-model="title" id="title" type="text" />
       </div>
-      <div class="border-box" id="flex">
+      <div
+        :class="{ 'invalid-input': !isContentValid }"
+        class="border-box"
+        id="flex"
+      >
         <label for="content">CONTENT</label>
         <textarea v-model="content" id="content" type="text" rows="10" />
       </div>
+      <span v-if="!isContentValid" class="validation-text">
+        Contents length must be less then 200
+      </span>
       <button type="submit">SUBMIT<i class="fa-solid fa-pen" /></button>
     </form>
   </div>
 </template>
 
 <script>
-import { createPost } from '@/api/index.js';
+import { createPost } from '@/api/posts';
 export default {
   data() {
     return {
       title: '',
       content: '',
+      log: '',
     };
+  },
+  computed: {
+    isContentValid() {
+      return this.content.length < 200;
+    },
   },
   methods: {
     async submitForm() {
@@ -85,7 +98,7 @@ textarea {
 button {
   padding: 10px 20px;
   display: block;
-  margin: 50px 0 0 auto;
+  margin: 30px 0 0 auto;
   border: none;
   border-radius: 10px;
   background-color: #000;
@@ -97,5 +110,15 @@ button {
   display: inline-block;
   margin-left: 10px;
   color: #fff;
+}
+.validation-text {
+  color: #f00;
+  text-align: right;
+  display: block;
+  margin-top: 20px;
+}
+.invalid-input {
+  transition: 0.4s ease-in;
+  border-bottom: 1px solid red;
 }
 </style>
