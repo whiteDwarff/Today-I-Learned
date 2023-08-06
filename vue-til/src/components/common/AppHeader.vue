@@ -38,12 +38,14 @@ export default {
   },
   methods: {
     logoutUser() {
-      this.$store.commit('clearUserName');
-      // this.$router.push('/');
-      if (this.$route.path !== '/login') this.$router.push('/login');
-      deleteCookie('til_user');
-      deleteCookie('til_auth');
-      logoutUser();
+      if (confirm('Would you like to logout')) {
+        this.$store.commit('clearUserName');
+        // this.$router.push('/');
+        if (this.$route.path !== '/login') this.$router.push('/login');
+        deleteCookie('til_user');
+        deleteCookie('til_auth');
+        logoutUser();
+      }
     },
   },
 };

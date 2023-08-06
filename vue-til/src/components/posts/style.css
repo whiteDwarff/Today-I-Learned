@@ -1,0 +1,57 @@
+.wrapper {
+  width: 60%;
+  margin: 0 auto;
+}
+h6 {
+  margin-bottom: 50px;
+}
+form {
+  width: 100%;
+  margin: 0 auto;
+}
+label {
+  width: 20%;
+  font-size: 14px;
+}
+textarea,
+input {
+  width: 80%;
+  outline: none;
+  border: none;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+textarea {
+  height: 300px;
+  resize: none;
+}
+#flex {
+  display: flex;
+  align-items: flex-start;
+}
+button {
+  padding: 10px 20px;
+  display: block;
+  margin: 30px 0 0 auto;
+  border: none;
+  border-radius: 10px;
+  background-color: #000;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+.fa-solid {
+  display: inline-block;
+  margin-left: 10px;
+  color: #fff;
+}
+.validation-text {
+  color: #f00;
+  text-align: right;
+  display: block;
+  margin-top: 20px;
+}
+.invalid-input {
+  transition: 0.4s ease-in;
+  border-bottom: 1px solid red;
+}

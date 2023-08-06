@@ -3,12 +3,13 @@
     <div class="post-wrap">
       <div class="post-flex-box">
         <h6 class="post-title">🔗 {{ postItem.title }}</h6>
-        <small class="post-time">{{ postItem.createdAt }}</small>
+        <!-- 전역으로 선언한 filter, formatData method를 사용 -->
+        <small class="post-time">{{ postItem.createdAt | formatData }}</small>
       </div>
       <p class="post-content">{{ postItem.contents }}</p>
       <div class="icon-box">
-        <i class="fa-solid fa-pen-to-square"></i>
-        <i @click="deleteItem" class="fa-solid fa-trash-can"></i>
+        <i @click="routeEditPage" class="fa-solid fa-pen-to-square" />
+        <i @click="deleteItem" class="fa-solid fa-trash-can" />
       </div>
     </div>
   </li>
@@ -29,6 +30,9 @@ export default {
         await deletePost(this.postItem._id);
         this.$emit('refresh');
       }
+    },
+    routeEditPage() {
+      this.$router.push(`/post/${this.postItem._id}`);
     },
   },
 };

@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <h6 class="bold">CREATE POST</h6>
+    <h6 class="bold">EDIT POST</h6>
     <form @submit.prevent="submitForm">
       <div class="border-box">
         <label for="title">TITLE</label>
@@ -21,15 +21,13 @@
     </form>
   </div>
 </template>
-
 <script>
-import { createPost } from '@/api/posts';
+import { fetchPost, editPost } from '@/api/posts';
 export default {
   data() {
     return {
       title: '',
       content: '',
-      log: '',
     };
   },
   computed: {
@@ -40,10 +38,11 @@ export default {
   methods: {
     async submitForm() {
       try {
-        await createPost({
+        await editPost(this.$route.params.id, {
           title: this.title,
           contents: this.content,
         });
+        alert('The post has been updated.');
         this.$router.push('/main');
       } catch (err) {
         if (this.title == '' || this.content == '') {
@@ -51,14 +50,14 @@ export default {
         } else if (err.response.data.message) {
           alert('해당 제목으로 등록된 내용이 있습니다.');
         }
-      } finally {
-        this.initForm();
       }
     },
-    initForm() {
-      this.title = '';
-      this.content = '';
-    },
+  },
+  async created() {
+    // this.$route.params.id : 주소창 파라미터의 값을 가져옴
+    let { data } = await fetchPost(this.$route.params.id);
+    this.title = data.title;
+    this.content = data.contents;
   },
 };
 </script>
