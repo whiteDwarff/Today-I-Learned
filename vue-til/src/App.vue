@@ -64,6 +64,9 @@ input {
   color: #fff;
   cursor: pointer;
 }
+.disabled {
+  background-color: #ccc;
+}
 .bold {
   font-weight: bold;
 }

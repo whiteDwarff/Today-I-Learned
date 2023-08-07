@@ -18,6 +18,7 @@
       :disabled="!isUserNameValid || !password || !nickname"
       type="submit"
       class="submit-button"
+      :class="!isUserNameValid || !password || !nickname ? 'disabled' : null"
     >
       CREATE ACCOUNT
     </button>

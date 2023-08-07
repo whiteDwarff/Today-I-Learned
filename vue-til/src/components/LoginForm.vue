@@ -13,6 +13,7 @@
       :disabled="!isUserNameValid || !password"
       type="submit"
       class="submit-button"
+      :class="!isUserNameValid || !password ? 'disabled' : null"
     >
       LOGIN
     </button>
