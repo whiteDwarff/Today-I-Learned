@@ -2,11 +2,11 @@
   <li class="post-items">
     <div class="post-wrap">
       <div class="post-flex-box">
-        <h6 class="post-title">🔗 {{ postItem.title }}</h6>
+        <h6 class="post-title">❗️ {{ postItem.title }}</h6>
         <!-- 전역으로 선언한 filter, formatData method를 사용 -->
         <small class="post-time">{{ postItem.createdAt | formatData }}</small>
       </div>
-      <p class="post-content">{{ postItem.contents }}</p>
+      <p class="post-content">✍🏻 {{ postItem.contents }}</p>
       <div class="icon-box">
         <i @click="routeEditPage" class="fa-solid fa-pen-to-square" />
         <i @click="deleteItem" class="fa-solid fa-trash-can" />
@@ -57,7 +57,7 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 .post-time {
   font-size: 10px;

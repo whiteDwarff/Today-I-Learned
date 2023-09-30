@@ -9,8 +9,11 @@
         @refresh="fetchData"
       />
     </ul>
-    <router-link to="/add" class="create-button">
-      <i class="fa-solid fa-pen" />
+    <div v-if="!postItems.length && !isLoading" class="guide">
+      <span>등록된 게시물이 없습니다.</span>
+    </div>
+    <router-link to="/add">
+      <i class="fa-solid fa-pen create-button" />
     </router-link>
     <router-link to=""></router-link>
   </div>
@@ -31,7 +34,7 @@ export default {
     async fetchData() {
       this.isLoading = true;
       const { data } = await fetchPosts();
-      this.postItems = data.posts;
+      this.postItems = data.posts.reverse();
       setTimeout(() => {
         this.isLoading = false;
       }, 500);
@@ -53,9 +56,9 @@ export default {
   margin: 0 auto;
 }
 .create-button {
-  position: absolute;
+  position: fixed;
   bottom: 10%;
-  right: 10%;
+  right: 5%;
   padding: 1%;
   background-color: #fe9616;
   border-radius: 50%;
@@ -63,5 +66,13 @@ export default {
 .fa-solid {
   font-size: 20px;
   color: #fff;
+}
+.guide {
+  text-align: center;
+  margin: auto 0;
+}
+.guide span {
+  font-size: 14px;
+  color: grey;
 }
 </style>
