@@ -2,11 +2,13 @@
 <br>
 <br>
 <div align="center">
-  <img src="https://img.shields.io/badge/Vue.js-4FC08D?style=flat&logo= vuedotjs&logoColor=#fff"/>
+  <img src="https://img.shields.io/badge/Vue.js-4FC08D?style=flat&logo=Vue.js&logoColor=white"/>
   <img src="https://img.shields.io/badge/axios-412991?style=flat&logo=axios&logoColor=#5A29E4"/>
   <img src="https://img.shields.io/badge/html5-E34F26?style=flat&logo=html5&logoColor=white"/>
   <img src="https://img.shields.io/badge/css-1572B6?style=flat&logo=css3&logoColor=#fff"/>
   <img src="https://img.shields.io/badge/javascript-F7DF1E?style=flat&logo=javascript&logoColor=white"/>
+  <img src="https://img.shields.io/badge/MongoDB-47A248?style=flat&logo=MongoDB&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Node.js-339933?style=flat&logo=Node.js&logoColor=white"/>
 </div>
 
 <br><br><br>
@@ -82,6 +84,7 @@
 **3. Main**<br>
   - 메인화면 입니다.
   - 우측 하단의 연필 아이콘을 통해 게시글을 작성할 수 있습니다.
+  - 접속 시 get 요청으로 데이터를 받아오고 없다면 빈화면이 출력됩니다.
 <img src="https://github.com/whiteDwarff/Today-I-Learned/assets/115057117/b573c404-6129-4ef3-a27e-cc9ef7925f8f" alt="main_empty"><br>
 
 <br><br>
@@ -106,4 +109,14 @@
   - delete 요청을 통해 게시글이 삭제됩니다.
 <img width="1247" alt="delete" src="https://github.com/whiteDwarff/Today-I-Learned/assets/115057117/e6ecf502-a90a-4dc9-adf9-7f750885df76"><br>
 <img width="1165" alt="delete1" src="https://github.com/whiteDwarff/Today-I-Learned/assets/115057117/00fd4a22-b17a-40fb-af22-0e750bba03ed"><br>
+
+<br><br>
+
+**6. Log out**<br>
+  - nav의 log out을 클릭하면 페이지에서 로그아웃 할 수 있습니다.
+    ```ruby
+      function deleteCookie(value) {
+        document.cookie = `${value}=; expires = Thu, 01 Jan 1970 00:00:01 GMT;`;
+    }
+    ```
 
