@@ -92,3 +92,18 @@
 <img width="1137" alt="addPost" src="https://github.com/whiteDwarff/Today-I-Learned/assets/115057117/44308661-f964-47a2-b06f-02dee5d6b231"><br>
 <img width="1137" alt="addPost1" src="https://github.com/whiteDwarff/Today-I-Learned/assets/115057117/8c196567-9f27-4d78-a9c4-16a4c5062b33"><br>
 
+<br><br>
+
+**5. Update**<br>
+ - 작성한 게시글을 수정할 수 있습니다.
+ - put 요청을 통해 게시글을 수정 후 메인화면으로 이동합니다.
+<img src="https://github.com/whiteDwarff/Today-I-Learned/assets/115057117/ec79a40c-bfbd-4ca3-a8fb-d4fbd8af5348" alt="update"><br>
+
+<br><br>
+
+**6. Delete**<br>
+  - 휴지통 아이콘을 눌러서 작성한 게시글을 삭제할 수 있습니다.
+  - delete 요청을 통해 게시글이 삭제됩니다.
+<img width="1247" alt="delete" src="https://github.com/whiteDwarff/Today-I-Learned/assets/115057117/e6ecf502-a90a-4dc9-adf9-7f750885df76"><br>
+<img width="1165" alt="delete1" src="https://github.com/whiteDwarff/Today-I-Learned/assets/115057117/00fd4a22-b17a-40fb-af22-0e750bba03ed"><br>
+
