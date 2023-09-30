@@ -56,7 +56,22 @@
 **1. Join**<br>
   - 회원가입 화면입니다.
   - ID와 Password, Nickname을 작성한 뒤 'CREATE ACCOUNT' 버튼을 클릭하여 회원가입 할 수 있습니다.
-  <img width="899" alt="join" src="https://github.com/whiteDwarff/Today-I-Learned/assets/115057117/197d4bc2-4099-4689-bb98-992a5ac75c41"><br>
-  - 작성한 데이터는 MongoDB의 users에 데이터가 저장됩니다.<br>
-  ![mongo_join](https://github.com/whiteDwarff/Today-I-Learned/assets/115057117/29b35259-a774-40d3-be19-b150410e8370)
+  <img width="940" alt="join" src="https://github.com/whiteDwarff/Today-I-Learned/assets/115057117/197d4bc2-4099-4689-bb98-992a5ac75c41"><br>
+  - 작성한 데이터는 MongoDB의 users에 저장됩니다.<br>
+  <img width="940" height="300" src="https://github.com/whiteDwarff/Today-I-Learned/assets/115057117/29b35259-a774-40d3-be19-b150410e8370"><br>
+<br><br>
 
+**2. Login**<br>
+  - 로그인 화면입니다.
+  - 작성된 데이터는 서버를 통해 MongoDB로 post 요청을 보내 회원여부를 판단합니다.
+  <img width="940" alt="login" src="https://github.com/whiteDwarff/Today-I-Learned/assets/115057117/b707a4cd-c7af-4572-b902-28954dcebdd0"><br>
+  - 로그인이 완료되면 cookie 저장소에 쿠기가 저장됩니다.<br>
+  - 저장된 쿠키를 통해 클라이언트 측에서 데이터를 보존하고 재사용할 수 있습니다.
+    ```ruby
+    function saveAuthToCookie(value) {
+      document.cookie = `til_auth=${value}`;
+    }
+    function saveUserToCookie(value) {
+        document.cookie = `til_user=${value}`;
+    }
+    ```
