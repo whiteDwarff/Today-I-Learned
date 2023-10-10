@@ -39,10 +39,27 @@
 <br><br>
 
 ## 🔗 MongoDB Info
-|   Name   |   Column   |   Column   |   Column   |   Column   |   Column   |   Column   |   Column   |
-|:--------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|
-|   User   |     _id     |  username   |  password   |  nickname   | insertedDate|  created_at |  update_at  |
-|   Post   |     _id     |    title    |  contents   |  createdBy  | created_at  |  updated_at |      .      |
+
+|   Name   |   Column   | 
+|:--------:|:-----------:|
+|   User   |     _id     |
+|      |     username     |
+|      |     password     |
+|      |     nickname     |
+|      |     insertedDate     |
+|      |     created_at     |
+|      |     update_at     |
+|   Post   |     _id     |
+|      |     title     |
+|      |     contents     |
+|      |     createdBy     |
+|      |     created_at     |
+|      |     updated_at     |
+
+
+
+
+
 
 <br>
 
