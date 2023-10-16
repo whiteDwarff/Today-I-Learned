@@ -11,7 +11,12 @@
   <img src="https://img.shields.io/badge/Node.js-339933?style=flat&logo=Node.js&logoColor=white"/>
 </div>
 
-<br><br><br>
+<br><br>
+
+## 🙇🏻‍♂️ 프로젝트 소개
+Today-I_Learned는 학습내용을 정리하고 복습할 수 있는 CRUD 기능으로 구현된 프로젝트입니다.<br>
+헉과 공부 및 개인공부를 하다보니 많은 양의 학습내용을 정리하여 필요한 기능 및 내용을 효과적으로 관리할 수 있을까? 라는 생각으로 개발하게 프로젝트를 개발하게 되었습니다.
+
 
 ## 🛠️ Tech
 **1. vue2.0**<br>
