@@ -80,7 +80,7 @@ Today-I_Learned는 학습내용을 정리하고 복습할 수 있는 CRUD 기능
 ## 🖥️ Views
 **1. Join**<br>
   - 회원가입 화면입니다.
-  - ID와 Password, Nickname을 작성한 뒤 'CREATE ACCOUNT' 버튼을 클릭하여 회원가입 할 수 있습니다.
+  - ID와 Password, Nickname을 작성한 뒤 `CREATE ACCOUNT` 버튼을 클릭하여 회원가입 할 수 있습니다.
   <img width="1137" alt="join" src="https://github.com/whiteDwarff/Today-I-Learned/assets/115057117/197d4bc2-4099-4689-bb98-992a5ac75c41"><br>
   - 작성한 데이터는 MongoDB의 users 테이블에 저장됩니다.<br>
   <img width="1137" height="300" src="https://github.com/whiteDwarff/Today-I-Learned/assets/115057117/29b35259-a774-40d3-be19-b150410e8370"><br>
